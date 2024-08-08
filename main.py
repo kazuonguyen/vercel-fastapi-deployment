@@ -43,17 +43,6 @@ async def root():
 async def hello():
     return {'res': 'pong', 'version': __version__, "time": time()}
 
-UPLOAD_DIR = "uploads"
-Path(UPLOAD_DIR).mkdir(parents=True, exist_ok=True)
-
-class ImageInfo(BaseModel):
-    filename: str
-    base64: str
-
-class ImageListResponse(BaseModel):
-    images: List[ImageInfo]
-
-
 
 if __name__ == "__main__":
     
